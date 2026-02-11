@@ -31,23 +31,17 @@ import matplotlib.pyplot as plt
 ```
 
 ```
-data = {
-    'Satisfaction_Level': [0.8, 0.4, 0.9, 0.3, 0.7, 0.2, 0.85, 0.5, 0.95, 0.45],
-    'Last_Evaluation': [0.9, 0.6, 0.8, 0.5, 0.75, 0.4, 0.88, 0.7, 0.95, 0.65],
-    'Number_of_Projects': [5, 3, 6, 2, 4, 2, 6, 3, 7, 3],
-    'Average_Monthly_Hours': [220, 150, 250, 120, 200, 100, 240, 160, 260, 140],
-    'Years_at_Company': [3, 2, 4, 1, 3, 1, 4, 2, 5, 2],
-    'Churn': [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
-}
-
 df = pd.DataFrame(data)
 ```
 
 ```
-X = df[['Satisfaction_Level', 'Last_Evaluation', 'Number_of_Projects',
-        'Average_Monthly_Hours', 'Years_at_Company']]
+X = df[['satisfaction_level',
+        'last_evaluation',
+        'number_project',
+        'average_montly_hours',
+        'time_spend_company']]
 
-y = df['Churn']
+y = df['left']
 ```
 
 ```
@@ -57,7 +51,16 @@ X_train, X_test, y_train, y_test = train_test_split(
 ```
 
 ```
-model = DecisionTreeClassifier(criterion='entropy', max_depth=3, random_state=42)
+model = DecisionTreeClassifier(criterion='entropy', max_depth=5, random_state=42)
+
+model.fit(X_train, y_train)
+model = DecisionTreeClassifier(
+    criterion='entropy',
+    max_depth=3,              
+    min_samples_split=50,     
+    min_samples_leaf=20,      
+    random_state=42
+)
 
 model.fit(X_train, y_train)
 ```
@@ -73,42 +76,40 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 ```
 
 ```
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(14, 7))
 
 plot_tree(model,
           feature_names=X.columns,
           class_names=['Stayed', 'Left'],
           filled=True,
           rounded=True,
-          fontsize=10)
+          fontsize=8)
 
 plt.title("Decision Tree for Employee Churn Prediction")
 plt.show()
 ```
 
 ```
-new_emp = [[0.4, 0.6, 3, 150, 2]]
+new_emp = [[0.35, 0.55, 3, 160, 3]]
 
 prediction = model.predict(new_emp)
 
-print("\nNew Employee Prediction:")
-
 if prediction[0] == 1:
-    print("Employee is likely to LEAVE (Churn).")
+    print("Employee is likely to LEAVE")
 else:
-    print("Employee is likely to STAY.")
+    print("Employee is likely to STAY")
+
 ```
 
 
 ## Output:
-<img width="665" height="61" alt="image" src="https://github.com/user-attachments/assets/c4d3fe10-5e7f-4765-be9e-8a2823c287f5" />
+<img width="699" height="79" alt="image" src="https://github.com/user-attachments/assets/ddfd43ab-9739-4da1-aaf3-325bf9cd0de1" />
 
-<img width="535" height="270" alt="image" src="https://github.com/user-attachments/assets/cebc1c8a-c623-4cc1-ac83-678880f72baa" />
+<img width="498" height="271" alt="image" src="https://github.com/user-attachments/assets/6f97f8e6-0745-4d5b-8b0a-2874c147cf12" />
 
-<img width="642" height="445" alt="image" src="https://github.com/user-attachments/assets/088785d9-7943-4b67-924b-18ba232995ed" />
+<img width="1042" height="518" alt="image" src="https://github.com/user-attachments/assets/6fbcab11-9ab5-4da3-962e-15ccbda4244a" />
 
-<img width="1011" height="123" alt="image" src="https://github.com/user-attachments/assets/1dbb6c9f-ecb7-4588-8793-7b28867755be" />
-
+<img width="314" height="49" alt="image" src="https://github.com/user-attachments/assets/dfd0af6a-affe-4cfc-933c-d00bd4cc84fb" />
 
 ## Result:
 Thus the program to implement the  Decision Tree Classifier Model for Predicting Employee Churn is written and verified using python programming.
