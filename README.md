@@ -102,8 +102,11 @@ else:
 
 ## Output:
 <img width="665" height="61" alt="image" src="https://github.com/user-attachments/assets/c4d3fe10-5e7f-4765-be9e-8a2823c287f5" />
+
 <img width="535" height="270" alt="image" src="https://github.com/user-attachments/assets/cebc1c8a-c623-4cc1-ac83-678880f72baa" />
+
 <img width="642" height="445" alt="image" src="https://github.com/user-attachments/assets/088785d9-7943-4b67-924b-18ba232995ed" />
+
 <img width="1011" height="123" alt="image" src="https://github.com/user-attachments/assets/1dbb6c9f-ecb7-4588-8793-7b28867755be" />
 
 
