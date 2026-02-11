@@ -103,13 +103,8 @@ else:
 
 
 ## Output:
-<img width="699" height="79" alt="image" src="https://github.com/user-attachments/assets/ddfd43ab-9739-4da1-aaf3-325bf9cd0de1" />
+<img width="842" height="848" alt="image" src="https://github.com/user-attachments/assets/af0d9f0c-a0bf-49df-8d8b-9ff583b0a734" />
 
-<img width="498" height="271" alt="image" src="https://github.com/user-attachments/assets/6f97f8e6-0745-4d5b-8b0a-2874c147cf12" />
-
-<img width="1042" height="518" alt="image" src="https://github.com/user-attachments/assets/6fbcab11-9ab5-4da3-962e-15ccbda4244a" />
-
-<img width="314" height="49" alt="image" src="https://github.com/user-attachments/assets/dfd0af6a-affe-4cfc-933c-d00bd4cc84fb" />
 
 ## Result:
 Thus the program to implement the  Decision Tree Classifier Model for Predicting Employee Churn is written and verified using python programming.
